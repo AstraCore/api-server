@@ -1,6 +1,6 @@
 from server import utils
 from server import cache
-import config
+from server import config
 import json
 
 class Transaction():
@@ -15,7 +15,7 @@ class Transaction():
 
     @classmethod
     def info(cls, thash: str):
-        data = utils.make_request("getrawtransaction", [thash, True])
+        data = utils.make_request("getrawtransaction", [thash, 1])
 
         if data["error"] is None:
             if "blockhash" in data["result"]:

@@ -1,7 +1,7 @@
 from server import utils
 from server import cache
 import requests
-import config
+from server import config
 
 class General():
     @classmethod
@@ -12,12 +12,12 @@ class General():
             data["result"]["supply"] = utils.supply(data["result"]["blocks"])["supply"]
             data["result"]["reward"] = utils.reward(data["result"]["blocks"])
             data["result"].pop("verificationprogress")
-            data["result"].pop("initialblockdownload")
+            #data["result"].pop("initialblockdownload")
             data["result"].pop("pruned")
-            data["result"].pop("softforks")
+            #data["result"].pop("softforks")
             data["result"].pop("bip9_softforks")
-            data["result"].pop("warnings")
-            data["result"].pop("size_on_disk")
+            #data["result"].pop("warnings")
+            #data["result"].pop("size_on_disk")
 
             nethash = utils.make_request("getnetworkhashps", [120, data["result"]["blocks"]])
             if nethash["error"] is None:

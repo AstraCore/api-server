@@ -31,7 +31,7 @@ class Address():
 
     @classmethod
     def unspent(cls, address: str, amount: int):
-        data = utils.make_request("getaddressutxos", [address, utils.amount(amount)])
+        data = utils.make_request("getaddressutxos", [address])
 
         if data["error"] is None:
             utxos = []
@@ -73,3 +73,4 @@ class Address():
                 result.append(address)
 
         return utils.response(result)
+
