@@ -58,9 +58,6 @@ def block_by_hash(bhash):
 @blueprint.route("/header/<string:bhash>", methods=["GET"])
 def block_header(bhash):
     data = utils.make_request("getblockheader", [bhash])
-    if data["error"] is None:
-        data["result"]["txcount"] = data["result"]["nTx"]
-        data["result"].pop("nTx")
 
     return jsonify(data)
 
