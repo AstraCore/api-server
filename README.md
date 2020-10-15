@@ -1,6 +1,6 @@
 # Getting started
 
-This is RESTful API which will allow you to interact with Sugarchain blockchain.
+This is RESTful API which will allow you to interact with AstraCore blockchain.
 
 # How to use it?
 
@@ -29,7 +29,7 @@ $ pip3 install -r requirements.txt
 $ python3 app.py
 ```
 
-All request should be send to this endpoint: `https://api.sugarchain.org/`
+All request should be send to this endpoint: `https://astraconnection.com/`
 
 Responce have following fields:
 
